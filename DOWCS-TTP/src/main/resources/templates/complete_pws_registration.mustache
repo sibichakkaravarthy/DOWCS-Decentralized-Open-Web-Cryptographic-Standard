@@ -1,0 +1,13 @@
+{{>header}}
+    <div>
+        <h2>You're almost there!</h2>
+        <p>Your PWS ID is <b>{{pwsId}}</b>. Decode the Base64 and decrypt the value below with your curve25519 private key and make it accessible to the the url: <code>{{url}}</code> in json with the key-value pair:<p>
+            <code>
+                {
+                    challenge: "[decrypted value]"
+                }</code> </p> to complete the pws registration verification challenge:</p>
+        <pre>{{challenge}}</pre>
+        <p></p>
+        <a href="/verify_pws/{{pwsId}}"><button>Verify</button></a>
+    </div>
+{{>footer}}

@@ -1,0 +1,43 @@
+{{>header}}
+<div class="content">
+    <div id="login-form">
+        <h3>{{ title }}</h3>
+        {{^complete}}
+            <form action="{{action}}" method="post">
+                {{#error}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/error}}
+                <div class="field">
+                    <label for="identifier">
+                        Identifier:
+                    </label>
+
+                    <input id="identifier" name="identifier" type="email" placeholder="abc@example.com" {{#values.identifier}}
+                           value="{{values.identifier}}" {{/values.identifier}}>
+                </div>
+                <div class="field">
+                    <label for="password">
+                        Password:
+                    </label>
+                    <input id="password" name="password" type="password" placeholder="P@s$w0rd">
+                </div>
+                <input type="hidden" name="csrf" value="{{csrf_token}}" />
+                {{#special}}<input type="hidden" name="special" value="{{special}}" />{{/special}}
+
+                <div style="margin-top: 20px" class="field">
+                    <button>Login</button>
+                </div>
+            </form>
+        {{/complete}}
+
+    </div>
+    <div id="login-prompt">
+        <hr/>
+        <a href="/register">
+            <button class="secondary">Create an account</button>
+        </a>
+    </div>
+</div>
+{{>footer}}
