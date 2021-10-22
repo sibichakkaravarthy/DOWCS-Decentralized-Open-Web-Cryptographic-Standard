@@ -1,0 +1,26 @@
+.content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 80px auto 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.secondary {
+    background-color: orangered;
+}
+
+#login-prompt {
+    text-align: center;
+}
+
+.error {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgba(240, 128, 128, 0.2);
+    color: crimson;
+    border: 1px solid crimson;
+    border-radius: 4px;
+}

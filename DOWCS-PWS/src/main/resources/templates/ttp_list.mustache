@@ -1,0 +1,13 @@
+{{>header}}
+<div>
+    <h2>TTPs available:</h2>
+    <ul>
+        {{#ttps}}
+            <a href="{{baseUrl}}/connect?pws_identifier={{id}}">
+            <li> {{name}} </li>
+            </a>
+        {{/ttps}}
+    </ul>
+</div>
+
+{{>footer}}

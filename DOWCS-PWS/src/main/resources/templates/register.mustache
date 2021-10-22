@@ -1,0 +1,53 @@
+{{>header}}
+<div>
+    <div class="content">
+        <div id="registration-form">
+            <h3>Create a new account for DemoPWS</h3>
+            {{^complete}}
+
+                <form action="/register" method="post">
+                    {{#error}}
+                        <div class="error">
+                            {{error}}
+                        </div>
+                    {{/error}}
+                    <div class="field">
+                        <label for="name">
+                            Name:
+                        </label>
+                        <input id="name" name="name" type="text" placeholder="John Doe" {{#values.name}}
+                               value="{{values.name}}" {{/values.name}}>
+                    </div>
+                    <div class="field">
+                        <label for="email">
+                            Email:
+                        </label>
+
+                        <input id="email" name="email" type="email" placeholder="abc@example.com" {{#values.email}}
+                               value="{{values.email}}" {{/values.email}}>
+                    </div>
+                    <div class="field">
+                        <label for="password">
+                            Password:
+                        </label>
+                        <input id="password" name="password" type="password" placeholder="A tough p@$$w0rd">
+                    </div>
+
+                    <div style="margin-top: 20px" class="field">
+                        <button>Register me!</button>
+                    </div>
+                </form>
+            {{/complete}}
+            {{#complete}}
+                <h4>Your account is ready, log in to your account!</h4>
+            {{/complete}}
+        </div>
+        <div id="login-prompt">
+            <hr/>
+            <a href="/">
+                <button class="secondary"> Already have an account? Login</button>
+            </a>
+        </div>
+    </div>
+</div>
+{{>footer}}

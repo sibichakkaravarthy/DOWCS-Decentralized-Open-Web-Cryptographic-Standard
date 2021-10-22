@@ -1,0 +1,49 @@
+{{>header}}
+<div>
+    <h2>Add a new TTP</h2>
+    <form action="/register/ttp" method="post">
+        {{#error}}
+            <div class="error">
+                {{error}}
+            </div>
+        {{/error}}
+        <div class="field">
+            <label for="name">
+                Name of the TTP:
+            </label>
+
+            <input id="name" name="name" type="text" autocomplete="off" placeholder="Your TTP" {{#values.name}}
+                   value="{{values.name}}" {{/values.name}}>
+        </div>
+
+        <div class="field">
+            <label for="pwsId">
+                PWS ID:
+            </label>
+
+            <input id="pwsId" name="pwsId" type="text" autocomplete="off" placeholder="PWS ID" {{#values.pwsId}}
+                   value="{{values.pwsId}}" {{/values.pwsId}}>
+        </div>
+
+        <div class="field">
+            <label for="url">
+                Base url:
+            </label>
+            <input id="url" name="baseUrl" type="url" autocomplete="off" placeholder="https://example.com" {{#values.baseUrl}}
+                   value="{{values.baseUrl}}" {{/values.baseUrl}}>
+        </div>
+
+        <div class="field">
+            <label for="challenge">
+                Challenge value:
+            </label>
+            <textarea id="challenge" name="challenge" placeholder="A Curve25519 ECIES encrypted challenge value">{{#values.challenge}}{{values.challenge}}{{/values.challenge}}</textarea>
+        </div>
+
+        <div style="margin-top: 20px" class="field">
+            <button>Add service</button>
+        </div>
+    </form>
+</div>
+
+{{>footer}}
